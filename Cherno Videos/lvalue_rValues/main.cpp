@@ -17,7 +17,7 @@ int main()
 
     string fullName = firstName + secondName;
     printName(fullName);
-   printName(firstName + secondName);
+    printName(firstName + secondName);
 }
 
 
