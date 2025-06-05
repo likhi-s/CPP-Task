@@ -5,12 +5,12 @@ Employee::Employee()
     cout<<"employee constructor called"<<endl;
 }
 
-Employee::Employee(const string& name, BaseObject* baseobject): BaseObject(name),m_baseobject(baseobject)
+Employee::Employee(const string& name, BaseObject* baseobject): BaseObject(name)
 {
     cout<<"employee constructor called"<<endl;
-    if (m_baseobject)
+    if (baseobject)
     {
-        m_baseobject->addchild(this);
+        baseobject->addchild(this);
     }
 }
 

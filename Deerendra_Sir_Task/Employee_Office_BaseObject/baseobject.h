@@ -11,14 +11,17 @@ public:
     BaseObject();
     BaseObject(const string name);
     ~BaseObject();
-    void print();
+
+    virtual void print();
+    virtual vector<BaseObject*> findchild(const string &name);
+    virtual void getMe();
+
     void addchild(BaseObject* child);
     string getName();
-    vector<string> findchild(const string &name);
-    virtual void getMe();
+
 protected:
     string m_name;
-    vector<BaseObject*>children;
+    vector<BaseObject*>m_children;
 
 };
 

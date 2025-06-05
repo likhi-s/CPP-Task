@@ -4,28 +4,31 @@
 
 using namespace std;
 
+
 int main()
 {
-    Office off("pthinks");
+    Office off("PthinkS");
 
     Employee e1("Likhitha", &off);
     Employee e2("Pallavi", &off);
-    Employee e3("Dharshini", &e1);
-    Employee e4("Pallavi",&off);
-    Employee e5("Likhitha",&off);
-    // Employee e3("Dharshini", &e1);
-    // Employee e4("Varshini",&e2);
-    // Employee e5("abc",&e2);
-    off.print();
+    Employee e3("Dharshini", &off);
+    Employee e4("Varshini",&off);
+    Employee e5("abc",&e4);
 
-    vector<string> name = off.findchild("Likhitha");
-    for(const auto& childname:name)
+    off.print();
+    off.getMe();
+
+    vector<BaseObject*> name = off.findchild("Likhitha");
+    for(auto childname:name)
     {
-        cout<<childname<<endl;
+        cout<<childname->getName()<<endl;
     }
 
-
-    off.getMe();
+    vector<BaseObject*> Name = e4.findchild("abc");
+    for(auto childname:Name)
+    {
+        cout<<childname->getName()<<endl;
+    }
 
 
     return 0;
