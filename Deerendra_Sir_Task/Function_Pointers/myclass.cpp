@@ -3,6 +3,7 @@
 MyClass::MyClass()
 {
     cout<<"MyClass Constructor Called"<<endl;
+    functionptr = print;
 }
 
 void MyClass::fun()
