@@ -121,9 +121,9 @@ void CalendarWidget::refreshCalendar()
         int index = startDay + d - 1;
         Date btnDate(d, m_currentMonth, m_currentYear);
 
-        // Booking info
         int bookedCount = 0;
-        if (m_bookingmanager->m_bookingList.find(btnDate) != m_bookingmanager->m_bookingList.end()) {
+        if (m_bookingmanager->m_bookingList.find(btnDate) != m_bookingmanager->m_bookingList.end())
+        {
             bookedCount = m_bookingmanager->m_bookingList[btnDate].size();
         }
 
@@ -202,10 +202,7 @@ void CalendarWidget::onDayClicked(Date date)
             btn->show();
             theaterButtons.append(btn);
 
-            connect(btn, &QPushButton::clicked, this, [=]() {
-                selectedTheaterId = id;
-                showBookingOptions();
-            });
+            connect(btn, &QPushButton::clicked, this, [=]() {selectedTheaterId = id;showBookingOptions();});
 
             y += 40;
         }
@@ -229,15 +226,9 @@ void CalendarWidget::showBookingOptions()
     bookButton->show();
     exitButton->show();
 
-    connect(bookButton, &QPushButton::clicked, this, [=]() {
-        m_bookingmanager->bookTheater(selectedDate, selectedTheaterId);
-        clearBookingOptions();
-        clearTheaterButtons();
-    });
+    connect(bookButton, &QPushButton::clicked, this, [=](){m_bookingmanager->bookTheater(selectedDate, selectedTheaterId);clearBookingOptions();clearTheaterButtons();});
 
-    connect(exitButton, &QPushButton::clicked, this, [=]() {
-        clearBookingOptions();
-    });
+    connect(exitButton, &QPushButton::clicked, this, [=](){clearBookingOptions();});
 }
 
 void CalendarWidget::clearTheaterButtons()

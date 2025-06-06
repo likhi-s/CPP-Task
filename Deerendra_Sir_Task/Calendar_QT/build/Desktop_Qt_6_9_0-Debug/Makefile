@@ -37,7 +37,7 @@ MOVE          = mv -f
 TAR           = tar -cf
 COMPRESS      = gzip -9f
 DISTNAME      = Calendar_QT1.0.0
-DISTDIR = /home/likhitha/Documents/Tasks/Deerendra_Sir_Task/Calendar_QT/build/Desktop_Qt_6_9_0-Debug/.tmp/Calendar_QT1.0.0
+DISTDIR = /home/likhitha/Documents/TASKS/Deerendra_Sir_Task/Calendar_QT/build/Desktop_Qt_6_9_0-Debug/.tmp/Calendar_QT1.0.0
 LINK          = g++
 LFLAGS        = -Wl,-rpath,/home/likhitha/Qt/6.9.0/gcc_64/lib -Wl,-rpath-link,/home/likhitha/Qt/6.9.0/gcc_64/lib
 LIBS          = $(SUBLIBS) /home/likhitha/Qt/6.9.0/gcc_64/lib/libQt6Widgets.so /home/likhitha/Qt/6.9.0/gcc_64/lib/libQt6Gui.so /home/likhitha/Qt/6.9.0/gcc_64/lib/libQt6Core.so -lpthread -lGL   
@@ -60,7 +60,7 @@ SOURCES       = ../../bookingmanager.cpp \
 		../../main.cpp \
 		../../month.cpp \
 		../../movietheater.cpp \
-		../../year.cpp moc_calendarwidget.cpp
+		../../year.cpp 
 OBJECTS       = bookingmanager.o \
 		calendar.o \
 		calendarwidget.o \
@@ -69,8 +69,7 @@ OBJECTS       = bookingmanager.o \
 		main.o \
 		month.o \
 		movietheater.o \
-		year.o \
-		moc_calendarwidget.o
+		year.o
 DIST          = /home/likhitha/Qt/6.9.0/gcc_64/mkspecs/features/spec_pre.prf \
 		/home/likhitha/Qt/6.9.0/gcc_64/mkspecs/common/unix.conf \
 		/home/likhitha/Qt/6.9.0/gcc_64/mkspecs/common/linux.conf \
@@ -866,222 +865,8 @@ compiler_moc_predefs_clean:
 moc_predefs.h: /home/likhitha/Qt/6.9.0/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++1z -Wall -Wextra -fPIC -dM -E -o moc_predefs.h /home/likhitha/Qt/6.9.0/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_calendarwidget.cpp
+compiler_moc_header_make_all:
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_calendarwidget.cpp
-moc_calendarwidget.cpp: ../../calendarwidget.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/QApplication \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qapplication.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qtguiglobal.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qglobal.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtcoreglobal.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtversionchecks.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtconfiginclude.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qconfig.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtcore-config.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtconfigmacros.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtdeprecationdefinitions.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcompilerdetection.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qprocessordetection.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qsystemdetection.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtcoreexports.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtdeprecationmarkers.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtclasshelpermacros.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtpreprocessorsupport.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qassert.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtnoop.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtypes.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtversion.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtypeinfo.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcontainerfwd.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qsysinfo.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qlogging.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qflags.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcompare_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qatomic.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbasicatomic.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qatomic_cxx11.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qgenericatomic.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qyieldcpu.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qconstructormacros.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qdarwinhelpers.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qexceptionhandling.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qforeach.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qttypetraits.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qfunctionpointer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qglobalstatic.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmalloc.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qminmax.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qnumeric.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qoverload.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qswap.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtenvironmentvariables.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtresource.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qttranslation.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qversiontagging.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qtgui-config.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qtguiexports.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgets-config.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qtwidgetsexports.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcoreapplication.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstring.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qchar.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcompare.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstdlibdetection.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcomparehelpers.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q20type_traits.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringview.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbytearray.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qrefcount.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qnamespace.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtmetamacros.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qarraydata.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qpair.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qarraydatapointer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qarraydataops.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcontainertools_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qxptype_traits.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q20functional.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q20memory.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q17memory.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbytearrayalgorithms.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbytearrayview.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringfwd.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringliteral.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringalgorithms.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qlatin1stringview.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qanystringview.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qutf8stringview.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringtokenizer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringbuilder.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringconverter.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringconverter_base.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcoreevent.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbasictimer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qabstracteventdispatcher.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qobject.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qobjectdefs.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qobjectdefs_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qfunctionaltools_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qlist.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qhashfunctions.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qiterator.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbytearraylist.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringlist.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qalgorithms.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qstringmatcher.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qscopedpointer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmetatype.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qdatastream.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qiodevicebase.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qfloat16.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmath.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtformat_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qiterable.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmetacontainer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcontainerinfo.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtaggedpointer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qscopeguard.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qobject_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qbindingstorage.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qeventloop.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qdeadlinetimer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qelapsedtimer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qnativeinterface.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcoreapplication_platform.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qfuture.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qfutureinterface.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmutex.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtsan_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qresultstore.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmap.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qshareddata.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qshareddata_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qfuture_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qthreadpool.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qthread.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qrunnable.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qexception.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qpromise.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qvariant.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qdebug.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qtextstream.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qcontiguouscache.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qsharedpointer.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qset.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qhash.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qvarlengtharray.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q23utility.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q20utility.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qwindowdefs.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qpoint.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qsize.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qmargins.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qcursor.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qbitmap.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qpixmap.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qpaintdevice.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qrect.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qcolor.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qrgb.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qrgba64.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qimage.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qpixelformat.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qtransform.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qpolygon.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qregion.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qspan.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/q20iterator.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qline.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qguiapplication.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qinputmethod.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qlocale.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qguiapplication_platform.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/QWidget \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qwidget.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qaction.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qkeysequence.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qicon.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qpalette.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qbrush.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qfont.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qendian.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qfontmetrics.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qfontinfo.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qfontvariableaxis.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qsizepolicy.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qevent.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qiodevice.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/qurl.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qeventpoint.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qvector2d.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qvectornd.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qpointingdevice.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qinputdevice.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qscreen.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/QList \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/QObject \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/QRect \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/QSize \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore/QSizeF \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/QTransform \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui/qscreen_platform.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/QPushButton \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qpushbutton.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets/qabstractbutton.h \
-		../../calendar.h \
-		../../bookingmanager.h \
-		../../movietheater.h \
-		../../date.h \
-		../../year.h \
-		../../month.h \
-		../../day.h \
-		moc_predefs.h \
-		/home/likhitha/Qt/6.9.0/gcc_64/libexec/moc
-	/home/likhitha/Qt/6.9.0/gcc_64/libexec/moc $(DEFINES) --include /home/likhitha/Documents/Tasks/Deerendra_Sir_Task/Calendar_QT/build/Desktop_Qt_6_9_0-Debug/moc_predefs.h -I/home/likhitha/Qt/6.9.0/gcc_64/mkspecs/linux-g++ -I/home/likhitha/Documents/Tasks/Deerendra_Sir_Task/Calendar_QT -I/home/likhitha/Qt/6.9.0/gcc_64/include -I/home/likhitha/Qt/6.9.0/gcc_64/include/QtWidgets -I/home/likhitha/Qt/6.9.0/gcc_64/include/QtGui -I/home/likhitha/Qt/6.9.0/gcc_64/include/QtCore -I. -I/usr/include/c++/13 -I/usr/include/x86_64-linux-gnu/c++/13 -I/usr/include/c++/13/backward -I/usr/lib/gcc/x86_64-linux-gnu/13/include -I/usr/local/include -I/usr/include/x86_64-linux-gnu -I/usr/include ../../calendarwidget.h -o moc_calendarwidget.cpp
-
 compiler_moc_objc_header_make_all:
 compiler_moc_objc_header_clean:
 compiler_moc_source_make_all:
@@ -1094,7 +879,7 @@ compiler_yacc_impl_make_all:
 compiler_yacc_impl_clean:
 compiler_lex_make_all:
 compiler_lex_clean:
-compiler_clean: compiler_moc_predefs_clean compiler_moc_header_clean 
+compiler_clean: compiler_moc_predefs_clean 
 
 ####### Compile
 
@@ -1552,9 +1337,6 @@ year.o: ../../year.cpp ../../year.h \
 		../../month.h \
 		../../day.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o year.o ../../year.cpp
-
-moc_calendarwidget.o: moc_calendarwidget.cpp 
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_calendarwidget.o moc_calendarwidget.cpp
 
 ####### Install
 
