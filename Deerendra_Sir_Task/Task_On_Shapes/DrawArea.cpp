@@ -2,8 +2,8 @@
 
 
 DrawArea::DrawArea(QWidget *parent)
-    : QWidget(parent), currentShape(None), penWidth(2),
-    borderColor(Qt::black), fillColor(Qt::white)
+    : QWidget(parent), m_currentShape(None), m_penWidth(2),
+    m_borderColor(Qt::black), m_fillColor(Qt::white)
 {
     cout<<"DrawArea Constructor Called"<<endl;
 }
@@ -14,34 +14,34 @@ DrawArea::~DrawArea()
 
 }
 
-void DrawArea::setShape(Shape s)
+void DrawArea::setShape(Shape shape)
 {
     cout<<"SetShape Function Called"<<endl;
-    currentShape = s;
+    m_currentShape = shape;
     update();
 }
 
-void DrawArea::setPenWidth(int w)
+void DrawArea::setPenWidth(int penWidth)
 {
     cout<<"setPenWidth Function Called"<<endl;
 
-    penWidth = w;
+    m_penWidth = penWidth;
     update();
 }
 
-void DrawArea::setBorderColor(const QColor &c)
+void DrawArea::setBorderColor(const QColor &borderColor)
 {
     cout<<"setBorderColor Function Called"<<endl;
 
-    borderColor = c;
+    m_borderColor = borderColor;
     update();
 }
 
-void DrawArea::setFillColor(const QColor &c)
+void DrawArea::setFillColor(const QColor &fillColor)
 {
     cout<<"setFillColor Function Called"<<endl;
 
-    fillColor = c;
+    m_fillColor = fillColor;
     update();
 }
 
@@ -49,16 +49,19 @@ void DrawArea::paintEvent(QPaintEvent *)
 {
     cout<<"DrawArea PaintEvent Function Called"<<endl;
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
-    painter.setPen(QPen(borderColor, penWidth));
-    painter.setBrush(fillColor);
+    painter.setPen(QPen(m_borderColor, m_penWidth));
+    painter.setBrush(m_fillColor);
 
-    QRect rect = this->rect().adjusted(50, 50, -50, -50);
-    if (currentShape == Rectangle)
+    QRect rect = this->rect();
+    if (m_currentShape == Rectangle)
+    {
         painter.drawRect(rect);
-    else if (currentShape == Circle)
+    }
+    else if (m_currentShape == Circle)
+    {
         painter.drawEllipse(rect);
-    else if (currentShape == Triangle)
+    }
+    else if (m_currentShape == Triangle)
     {
         QPoint top(rect.center().x(), rect.top());
         QPoint left(rect.bottomLeft());
@@ -69,7 +72,7 @@ void DrawArea::paintEvent(QPaintEvent *)
 
         painter.drawPolygon(triangle);
     }
-    else if(currentShape == Square)
+    else if(m_currentShape == Square)
     {
         int side = qMin(rect.width(), rect.height());
         int x = rect.center().x() - side / 2;

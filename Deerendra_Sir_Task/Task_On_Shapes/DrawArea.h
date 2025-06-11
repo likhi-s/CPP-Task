@@ -17,19 +17,19 @@ public:
 
     DrawArea(QWidget *parent = nullptr);
     ~DrawArea();
-    void setShape(Shape s);
-    void setPenWidth(int w);
-    void setBorderColor(const QColor &c);
-    void setFillColor(const QColor &c);
+    void setShape(Shape shape);
+    void setPenWidth(int penWidth);
+    void setBorderColor(const QColor &borderColor);
+    void setFillColor(const QColor &fillColor);
 
 protected:
     void paintEvent(QPaintEvent *event) override;
 
 private:
-    Shape currentShape;
-    int penWidth;
-    QColor borderColor;
-    QColor fillColor;
+    Shape m_currentShape;
+    int m_penWidth;
+    QColor m_borderColor;
+    QColor m_fillColor;
 };
 
 #endif // DRAWAREA_H

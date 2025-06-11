@@ -12,11 +12,6 @@ ShapeButton::~ShapeButton()
     cout<<"ShapeButton Destructor Called"<<endl;
 }
 
-// ShapeType ShapeButton::shapeType() const
-// {
-//     cout<<"Shapetype function called"<<endl;
-//     return m_shape;
-// }
 
 void ShapeButton::paintEvent(QPaintEvent *event)
 {
