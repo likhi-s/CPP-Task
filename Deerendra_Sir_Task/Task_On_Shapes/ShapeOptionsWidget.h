@@ -23,6 +23,8 @@ public:
     void setFillColor(const QColor &color);
 
 
+    void setupUI();
+    void setupConnections();
 signals:
     void penWidthChanged(int);
     void borderColorChanged(const QColor &);

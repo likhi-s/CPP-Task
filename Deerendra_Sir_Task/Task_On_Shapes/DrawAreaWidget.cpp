@@ -1,27 +1,27 @@
-#include "DrawArea.h"
+#include "DrawAreaWidget.h"
 
 
-DrawArea::DrawArea(QWidget *parent)
+DrawAreaWidget::DrawAreaWidget(QWidget *parent)
     : QWidget(parent), m_currentShape(None), m_penWidth(2),
     m_borderColor(Qt::black), m_fillColor(Qt::white)
 {
-    cout<<"DrawArea Constructor Called"<<endl;
+    cout<<"DrawAreaWidget Constructor Called"<<endl;
 }
 
-DrawArea::~DrawArea()
+DrawAreaWidget::~DrawAreaWidget()
 {
-    cout<<"DrawArea Destructor Called"<<endl;
+    cout<<"DrawAreaWidget Destructor Called"<<endl;
 
 }
 
-void DrawArea::setShape(Shape shape)
+void DrawAreaWidget::setShape(Shape shape)
 {
     cout<<"SetShape Function Called"<<endl;
     m_currentShape = shape;
     update();
 }
 
-void DrawArea::setPenWidth(int penWidth)
+void DrawAreaWidget::setPenWidth(int penWidth)
 {
     cout<<"setPenWidth Function Called"<<endl;
 
@@ -29,7 +29,7 @@ void DrawArea::setPenWidth(int penWidth)
     update();
 }
 
-void DrawArea::setBorderColor(const QColor &borderColor)
+void DrawAreaWidget::setBorderColor(const QColor &borderColor)
 {
     cout<<"setBorderColor Function Called"<<endl;
 
@@ -37,7 +37,7 @@ void DrawArea::setBorderColor(const QColor &borderColor)
     update();
 }
 
-void DrawArea::setFillColor(const QColor &fillColor)
+void DrawAreaWidget::setFillColor(const QColor &fillColor)
 {
     cout<<"setFillColor Function Called"<<endl;
 
@@ -45,9 +45,9 @@ void DrawArea::setFillColor(const QColor &fillColor)
     update();
 }
 
-void DrawArea::paintEvent(QPaintEvent *)
+void DrawAreaWidget::paintEvent(QPaintEvent *)
 {
-    cout<<"DrawArea PaintEvent Function Called"<<endl;
+    cout<<"DrawAreaWidget PaintEvent Function Called"<<endl;
     QPainter painter(this);
     painter.setPen(QPen(m_borderColor, m_penWidth));
     painter.setBrush(m_fillColor);

@@ -21,7 +21,6 @@ class ShapeButton : public QPushButton
 public:
     ShapeButton(ShapeType shape, QWidget *parent = nullptr);
     ~ShapeButton();
-    //ShapeType shapeType() const;
 
 protected:
     void paintEvent(QPaintEvent *event) override;

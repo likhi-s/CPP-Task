@@ -9,19 +9,9 @@ CONFIG += c++17
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += \
-    DrawAreaWidget.cpp \
-    ShapeButton.cpp \
-    ShapeOptionsWidget.cpp \
-    ShapeSelectorWidget.cpp \
-    main.cpp \
-    MainWindow.cpp
+    main.cpp
 
-HEADERS += \
-    DrawAreaWidget.h \
-    MainWindow.h \
-    ShapeButton.h \
-    ShapeOptionsWidget.h \
-    ShapeSelectorWidget.h
+HEADERS +=
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

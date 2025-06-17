@@ -1,5 +1,5 @@
-#ifndef DRAWAREA_H
-#define DRAWAREA_H
+#ifndef DRAWAREAWIDGET_H
+#define DRAWAREAWIDGET_H
 
 #include <QWidget>
 #include <QColor>
@@ -8,15 +8,15 @@
 #include <iostream>
 using namespace std;
 
-class DrawArea : public QWidget
+class DrawAreaWidget : public QWidget
 {
     Q_OBJECT
 
 public:
     enum Shape {None,Rectangle, Circle,Triangle,Square };
 
-    DrawArea(QWidget *parent = nullptr);
-    ~DrawArea();
+    DrawAreaWidget(QWidget *parent = nullptr);
+    ~DrawAreaWidget();
     void setShape(Shape shape);
     void setPenWidth(int penWidth);
     void setBorderColor(const QColor &borderColor);
@@ -32,4 +32,4 @@ private:
     QColor m_fillColor;
 };
 
-#endif // DRAWAREA_H
+#endif // DRAWAREAWIDGET_H

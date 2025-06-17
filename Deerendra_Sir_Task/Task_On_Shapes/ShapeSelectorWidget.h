@@ -15,6 +15,15 @@ public:
 
 signals:
     void shapeSelected(ShapeType shape);
+private:
+    void setupUI();
+    void setupConnections();
+
+    ShapeButton *m_rectBtn;
+    ShapeButton *m_circleBtn;
+    ShapeButton *m_triangleBtn;
+    ShapeButton *m_squareBtn;
+
 
 };
 

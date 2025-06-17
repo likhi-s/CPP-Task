@@ -8,7 +8,7 @@
 #include <QPushButton>
 #include <QSpinBox>
 #include <QColorDialog>
-#include "DrawArea.h"
+#include "DrawAreaWidget.h"
 #include <iostream>
 using namespace std;
 
@@ -19,9 +19,18 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+
 private:
-    DrawArea *drawArea;
-    QSpinBox *penWidthBox;
+    void setupCentralWidget();
+    void setupConnections();
+    void applyDefaultDrawingOptions();
+    void applyDefaultShapeOptions();
+
+
+    DrawAreaWidget *m_drawArea;
+    ShapeSelectorWidget *m_shapeSelector;
+    ShapeOptionsWidget *m_shapeOptions;
+    QSpinBox *m_penWidthBox;
 };
 
 #endif // MAINWINDOW_H

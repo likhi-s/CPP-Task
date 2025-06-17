@@ -1,10 +1,22 @@
 #include "ShapeOptionsWidget.h"
 
-
 ShapeOptionsWidget::ShapeOptionsWidget(QWidget *parent)
     : QWidget(parent)
 {
-    cout<<"ShapeOptionsWidget constructor Called"<<endl;
+    cout << "ShapeOptionsWidget constructor Called" << endl;
+    setupUI();
+    setupConnections();
+}
+
+ShapeOptionsWidget::~ShapeOptionsWidget()
+{
+    cout << "ShapeOptionsWidget Destructor Called" << endl;
+
+}
+void ShapeOptionsWidget::setupUI()
+{
+    cout << "ShapeOptionsWidget setupUI fun Called" << endl;
+
     QHBoxLayout *mainLayout = new QHBoxLayout(this);
     mainLayout->setAlignment(Qt::AlignTop);
 
@@ -18,6 +30,7 @@ ShapeOptionsWidget::ShapeOptionsWidget(QWidget *parent)
 
     QVBoxLayout *borderLayout = new QVBoxLayout();
     borderLayout->addWidget(new QLabel("Border Color:"));
+
     borderColorEdit = new QLineEdit();
     borderColorEdit->setPlaceholderText("e.g., red");
     borderLayout->addWidget(borderColorEdit);
@@ -25,32 +38,32 @@ ShapeOptionsWidget::ShapeOptionsWidget(QWidget *parent)
 
     QVBoxLayout *fillLayout = new QVBoxLayout();
     fillLayout->addWidget(new QLabel("Fill Color:"));
+
     fillColorEdit = new QLineEdit();
     fillColorEdit->setPlaceholderText("e.g., blue");
     fillLayout->addWidget(fillColorEdit);
     mainLayout->addLayout(fillLayout);
+}
+void ShapeOptionsWidget::setupConnections()
+{
+    cout << "ShapeOptionsWidget setupConnections fun Called" << endl;
 
     connect(penWidthSpin, QOverload<int>::of(&QSpinBox::valueChanged),
             this, &ShapeOptionsWidget::penWidthChanged);
 
-    connect(borderColorEdit, &QLineEdit::textChanged, this, [=](const QString &text)
-            {
-                QColor color(text);
-                if (color.isValid()) emit borderColorChanged(color);
-            });
+    connect(borderColorEdit, &QLineEdit::textChanged, this, [=](const QString &text) {
+        QColor color(text);
+        if (color.isValid())
+            emit borderColorChanged(color);
+    });
 
-    connect(fillColorEdit, &QLineEdit::textChanged, this, [=](const QString &text)
-            {
-                QColor color(text);
-                if (color.isValid()) emit fillColorChanged(color);
-            });
+    connect(fillColorEdit, &QLineEdit::textChanged, this, [=](const QString &text) {
+        QColor color(text);
+        if (color.isValid())
+            emit fillColorChanged(color);
+    });
 }
 
-ShapeOptionsWidget::~ShapeOptionsWidget()
-{
-    cout<<"ShapeOptionsWidget Destructor Called"<<endl;
-
-}
 void ShapeOptionsWidget::setPenWidth(int width)
 {
     cout<<"ShapeOptionsWidget setPenWidth function Called"<<endl;

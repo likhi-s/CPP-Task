@@ -15,11 +15,10 @@ ShapeButton::~ShapeButton()
 
 void ShapeButton::paintEvent(QPaintEvent *event)
 {
-    cout<<"shapeButton PaintEvent Function Called"<<endl;
+    cout<<"ShapeButtonWidget PaintEvent Function Called"<<endl;
     QPushButton::paintEvent(event);
 
     QPainter painter(this);
-    painter.setRenderHint(QPainter::Antialiasing);
     painter.setPen(Qt::black);
     painter.setBrush(Qt::gray);
 
